@@ -1,5 +1,6 @@
 """Process Data How many people suicides each Town in [2001]"""
 import json
+import pygal
 with open('data.json') as test_data: #receive data
 
     data = json.load(test_data)
@@ -16,12 +17,13 @@ with open('data.json') as test_data: #receive data
             else:
                 city[i["State"]] = i["Total"]
 
-        print("Processing")    #check it runing or not
-
     print("***Complete***")    #finish
 
     """show data process"""
     list_city = sorted(list(city))
-
+    line_chart = pygal.HorizontalBar(height=800, width=1000)
+    line_chart.title = "2001"
     for i in list_city:
+        line_chart.add(i, city[i])
         print("%s : %d" %(i, city[i]))
+    line_chart.render_to_file('2001.svg')

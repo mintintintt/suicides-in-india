@@ -9,7 +9,7 @@ with open('data.json') as test_data: #receive data
 
     for i in data:
         """edit year to find 2001-2012 and check requestment"""
-        if  i["State"] not in remove_case and i["Type_code"] == "Causes" and i["Year"] == 2001:
+        if  i["State"] not in remove_case and i["Age_group"] != "0-100+" and i["Year"] == 2001:
             """check in have it dict already or not"""
             if i["State"] in city:
                 city[i["State"]] += i["Total"]

@@ -1,0 +1,13 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    padding-top: 70px;
+    background: url('pictures/indian_background.jpg') center;
+}
+
+#canvas {
+    max-width: 1060px;
+    margin: auto;
+}
